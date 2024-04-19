@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <title>HAM-R</title>
+</head>
+<body>
+  
+  <div id="settings-bar" class="modern-settings-bar">
+    <div class="setting-section">      
+      <label class="setting-lable" >Password:</label>
+      <textarea id="password"  rows="1">12345</textarea>
+    </div>
+    <div class="setting-section">      
+      <label class="setting-lable" >Image Generation:</label>
+      <label class="switch" id = "a" onclick="updateSetting_ImageGeneration()">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <div class="setting-section">      
+      <label class="setting-lable" >Weather:</label>
+      <label class="switch" id = "a" onclick="updateSetting_Weather()">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <div class="setting-section">      
+      <label class="setting-lable" >AI:</label>
+      <label class="switch" id = "a" onclick="updateSetting_AI()">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <div class="setting-section">
+      <label class="setting-lable" for="dropdown">Personality:</label>
+      <select id="dropdown" name="dropdown">
+          <option value="option1">Assistant</option>
+          <option value="option2">Teacher</option>
+          <option value="option3">Doctor</option>
+          <option value="option3">Astrophysicst</option>
+          <option value="option3">Poet (Under Construction)</option>
+          <option value="option3">Singer (Under Construction)</option>
+          <option value="option3">Artist (Under Construction)</option>
+      </select>
+    </div>
+    <div class="setting-section">
+      <label class="setting-lable" for="dropdown2">User Language:</label>
+      <select id="dropdown2" name="dropdown2">
+        <option value="option2">English (United States)  </option>
+        <option value="option2">English (United Kingdom) </option>
+        <option value="option2">Spanish (Spain)          </option>
+        <option value="option2">Spanish (Mexico)         </option>
+        <option value="option2">French (France)          </option>
+        <option value="option2">French (Canada)          </option>
+        <option value="option2">German (Germany)         </option>
+        <option value="option2">Italian (Italy)          </option>
+        <option value="option2">Japanese (Japan)         </option>
+        <option value="option2">Portuguese (Brazil)      </option>
+        <option value="option2">Russian (Russia)         </option>
+        <option value="option2">Chinese (China)          </option>
+        <option value="option2">Chinese (Taiwan)         </option>
+        <option value="option2">Dutch (Netherlands)      </option>
+        <option value="option2">Korean (South Korea)     </option>
+        <option value="option2">Arabic (Saudi Arabia)    </option>
+        <option value="option2">Hindi (India)            </option>
+        <option value="option2">Bengali (Bangladesh)     </option>
+        <option value="option2">Turkish (Turkey)         </option>
+        <option value="option2">Polish (Poland)          </option>
+      </select>
+    </div>
+
+    <div class="setting-section">
+      <label class="setting-lable" for="dropdown3">AI Language:</label>
+      <select id="dropdown3" name="dropdown3">
+        <option value="option2">English (United States)  </option>
+        <option value="option2">English (United Kingdom) </option>
+        <option value="option2">Spanish (Spain)          </option>
+        <option value="option2">Spanish (Mexico)         </option>
+        <option value="option2">French (France)          </option>
+        <option value="option2">French (Canada)          </option>
+        <option value="option2">German (Germany)         </option>
+        <option value="option2">Italian (Italy)          </option>
+        <option value="option2">Japanese (Japan)         </option>
+        <option value="option2">Portuguese (Brazil)      </option>
+        <option value="option2">Russian (Russia)         </option>
+        <option value="option2">Chinese (China)          </option>
+        <option value="option2">Chinese (Taiwan)         </option>
+        <option value="option2">Dutch (Netherlands)      </option>
+        <option value="option2">Korean (South Korea)     </option>
+        <option value="option2">Arabic (Saudi Arabia)    </option>
+        <option value="option2">Hindi (India)            </option>
+        <option value="option2">Bengali (Bangladesh)     </option>
+        <option value="option2">Turkish (Turkey)         </option>
+        <option value="option2">Polish (Poland)          </option>
+      </select>
+    </div>
+
+    <div class="setting-section">
+      <button onclick="hideSetting()">Close</button>
+    </div>
+  </div>
+  
+  <div class="chat-container">
+    <div class="chat-header">
+      <h2>HAM-R</h2>
+    </div>
+    <div class="chat-messages" id="chat-messages">
+      
+    </div>
+    <div class="chat-input">
+      <input type="text" id="message-input" placeholder="Type your message...">
+      <button id="listen-button" onclick="Listen()">Listen</button>
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
